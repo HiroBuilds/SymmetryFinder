@@ -32,6 +32,6 @@ public class Atom implements Comparable<Atom> {
 
     @Override
     public int compareTo(Atom atom) {
-        return this.getCoordinate().compareTo(atom.coordinate);
+        return this.coordinate.compareTo(atom.getCoordinate());
     }
 }

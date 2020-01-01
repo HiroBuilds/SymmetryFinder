@@ -11,7 +11,7 @@ public class Lattice {
         this.identity = identity;
     }
 
-    public List<Coordinate> points() {
+    public final List<Coordinate> points() {
         if (identity == 'P') {
             List<Coordinate> points = new ArrayList<Coordinate>();
             for(int i = 0; i < 2; i++) {
@@ -37,9 +37,9 @@ public class Lattice {
         }
         if (identity == 'F') {
             List<Coordinate> points = new ArrayList<Coordinate>();
-            for(int i = 0; i < 4; i++) {
-                for(int j = 0; j < 4; j++) {
-                    for(int k = 0; k < 4; k++) {
+            for(int i = 0; i < 2; i++) {
+                for(int j = 0; j < 2; j++) {
+                    for(int k = 0; k < 2; k++) {
                         points.add(new Coordinate(i, j, k));
                     }
                 }
@@ -54,7 +54,7 @@ public class Lattice {
         }
         return null;
     }
-    public List<Coordinate> pointsL() {
+    public final List<Coordinate> pointsL() {
         if (identity == 'P') {
             List<Coordinate> points = new ArrayList<Coordinate>();
             for(int i = 0; i < 4; i++) {

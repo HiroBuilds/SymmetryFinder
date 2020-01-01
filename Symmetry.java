@@ -1,9 +1,10 @@
 package uk.ac.cam.hjf42.Experiment;
 
+import java.util.Collections;
 import java.util.List;
 
-public class Symmetry {
-    final Crystal crystal;
+abstract class Symmetry {
+    private Crystal crystal;
 
     protected Symmetry(Crystal crystal) {
         this.crystal = crystal;

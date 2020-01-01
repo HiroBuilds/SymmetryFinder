@@ -16,13 +16,12 @@ public class Crystal {
 
     public List<Atom> getStructure() {
         List<Atom> structure = new ArrayList<>();
-        Lattice lattice = this.lattice;
         for (Coordinate p : lattice.points()) {
             for (Atom atom : motif) {
                 if (atom.getCoordinate().getX() + p.getX() <= 1 && atom.getCoordinate().getY() + p.getY() <= 1 && atom.getCoordinate().getZ() + p.getZ() <= 1) {
                     structure.add(new Atom(atom.getElement(),
                             new Coordinate(atom.getCoordinate().getX() + p.getX(), atom.getCoordinate().getY() + p.getY(), atom.getCoordinate().getZ() + p.getZ())));
-                    // for each coordinate point, for each atom in the motif, makes a new list with a new atom with identity of motif atom and coordinate of sum of lattice and atom coordinate
+                    // for each lattice coordinate, adds motif to list
                 }
             }
         }
@@ -30,12 +29,11 @@ public class Crystal {
     }
     public List<Atom> getStructureL() {
         List<Atom> structure = new ArrayList<>();
-        Lattice lattice = this.lattice;
         for (Coordinate p : lattice.pointsL()) {
             for (Atom atom : motif) {
                 structure.add(new Atom(atom.getElement(),
                         new Coordinate(atom.getCoordinate().getX() + p.getX(), atom.getCoordinate().getY() + p.getY(), atom.getCoordinate().getZ() + p.getZ())));
-                // for each coordinate point, for each atom in the motif, makes a new list with a new atom with identity of motif atom and coordinate of sum of lattice and atom coordinate
+                // for each lattice coordinate, adds motif to list
             }
         }
         return structure;
